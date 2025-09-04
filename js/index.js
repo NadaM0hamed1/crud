@@ -34,6 +34,8 @@ function addProduct() {
     
 }
 
+
+
 function display() {
   box = "";
   for (var i = 0; i < productList.length; i++) {
@@ -215,4 +217,10 @@ function dataValidescription(){
     productDescriptionInput.classList.add("is-invalid")
 
   }
+}
+
+
+function printSum(){
+  let sum=5
+
 }
