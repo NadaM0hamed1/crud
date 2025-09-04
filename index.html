@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crud44</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+
+    
+    <section>
+      <div class="container bg-info rounded-3 my-3 p-3">
+        <h1 class="text-center">CRUD SYSREM</h1>
+        <div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="ProductName" placeholder="" oninput="dataValidName()"/>
+            <label for="ProductName">ProductName</label>
+            <p class="alert alert-danger d-none" id="msName">data not valid</p>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input
+            oninput="dataValidPrice()"
+              type="number"
+              class="form-control"
+              id="ProductPrice"
+              placeholder=""
+            />
+            <label for="ProductPrice">ProductPrice</label>
+            <p id="msPrice" class="alert alert-danger d-none">less than 4 num</p>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input
+            oninput="dataValidCategory ()"
+              type="text"
+              list="datalistOptions"
+              class="form-control"
+              id="ProductCategory"
+              placeholder=""
+            />
+            <label for="ProductCategory">ProductCategory</label>
+            <datalist id="datalistOptions">
+              <option value="tv"></option>
+              <option value="mobile"></option>
+              <option value="screen"></option>
+              <option value="electronic"></option>
+            </datalist>
+
+            <p class="alert alert-danger d-none" id="smCategory">choose from list</p>
+          </div>
+
+          <div class="form-floating mb-3">
+            <textarea
+            oninput="dataValidescription()"
+              class="form-control"
+              placeholder="Leave a comment here"
+              id="ProductDescription"
+            ></textarea>
+            <label for="ProductDescription">ProductDescription</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input
+              type="file"
+              class="form-control"
+              id="ProductImage"
+              placeholder=""
+            />
+            <label for="ProductImage">ProductImage</label>
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="addProduct()" id="btnadd">Add product</button>
+          <button
+            type="button"
+            class="btn btn-danger d-none"
+            onclick="updateProduct()"
+            id="btnupdate"
+          >
+            updata
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="container-fluid">
+
+      <input id="searchInput" type="search" class="form-control w-50 mx-auto my-4" oninput="searchData()" placeholder="search....">
+
+
+        <div class="row" id="product">
+            
+        </div>
+        </div>
+    </div>
+    
+    <script src="js/index.js"></script>
+  </body>
+</html>
